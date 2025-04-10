@@ -15,8 +15,7 @@ import photo12 from '../assets/images/screens/12.png';
 import ScreenshotGallery from '../components/ScreenshotGallery';
 
 const Screenshots = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const screenshots = [
     photo2, photo3, photo4, photo5, photo6, photo7, photo8,
     photo9, photo10, photo11, photo12
@@ -42,7 +41,7 @@ const Screenshots = () => {
         <ScreenshotGallery
           screenshots={screenshots}
           selectedImage={selectedImage}
-          onSelectImage={setSelectedImage}
+          onSelectImage={setSelectedImage}  // This works because the type is now compatible
         />
 
         {/* Modal for enlarged view with improved sizing */}

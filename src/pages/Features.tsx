@@ -49,11 +49,27 @@ const Icons = {
   )
 };
 
-// Modern FeatureCard component that matches our new design
-const FeatureCard = ({ icon: IconComponent, title, description, onClick, align, isActive }) => {
+interface FeatureCardProps {
+  icon: React.ComponentType;
+  title: string;
+  description: string;
+  onClick: () => void;
+  align: 'left' | 'right';
+  isActive: boolean;
+}
+
+const FeatureCard = ({
+  icon: IconComponent,
+  title,
+  description,
+  onClick,
+  align,
+  isActive
+}: FeatureCardProps) => {
   return (
-    <div
-      className={`group cursor-pointer transition-all duration-300 hover:bg-indigo-50 p-6 rounded-xl ${isActive ? 'bg-indigo-50' : ''}`}
+    <button
+      className={`group w-full text-left transition-all duration-300 hover:bg-indigo-50 p-6 rounded-xl ${isActive ? 'bg-indigo-50' : ''
+        }`}
       onClick={onClick}
     >
       <div className={`flex items-start ${align === 'right' ? 'flex-row-reverse text-right' : 'flex-row text-left'}`}>
@@ -71,7 +87,7 @@ const FeatureCard = ({ icon: IconComponent, title, description, onClick, align, 
           </p>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 

@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import phone1 from '../assets/images/1.png';
 import phone2 from '../assets/images/2.png';
 import phone3 from '../assets/images/3.png'; // Added import for the third image
-import appStore from '../assets/images/appstore.png';
-import googlePlay from '../assets/images/googleplay.png';
 
 const Home = () => {
   const phoneImages = [phone1, phone2, phone3]; // Array of all phone images
@@ -95,7 +93,7 @@ const Home = () => {
 
                 {/* Image switcher buttons - now with three buttons */}
                 <div className="flex justify-center mt-6 space-x-3">
-                  {phoneImages.map((image, index) => (
+                  {phoneImages.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setActiveImageIndex(index)}
